@@ -1,15 +1,33 @@
 package com.abhinav.usersystem.entities;
 
-import com.abhinav.usersystem.enums.SignUpBy;
 
-public class UserDetails {
+
+import com.abhinav.usersystem.enums.SignUpBy;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+public class UserRequest {
 
     private String firstName;
     private String lastName;
     private String emailAddress;
     private String password;
     private Long phoneNumber;
+
+    @JsonProperty("signupBy")
     private SignUpBy signUpBy;
+
+    public UserRequest() {
+    }
+
+    public UserRequest(String firstName, String lastName, String emailAddress, String password, Long phoneNumber, SignUpBy signUpBy) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.signUpBy = signUpBy;
+    }
 
     public SignUpBy getSignUpBy() {
         return signUpBy;

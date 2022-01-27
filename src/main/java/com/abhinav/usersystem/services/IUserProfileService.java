@@ -1,9 +1,13 @@
 package com.abhinav.usersystem.services;
 
+import com.abhinav.usersystem.entities.UserRequest;
+import com.abhinav.usersystem.entities.UserProfile;
+
+
 public interface IUserProfileService {
 
-    public OperationStatus createUserProfile(UserDetails userDetails);
-    public UserProfile getUserProfile(UserDetails userDetails); // can getUserByEmail or getUserByUserId or getuserbyphone
-    public UserProfile editUserProfile(UserDetails userDetails);
-    public OperationStatus deleteUser(UserDetails userDetails);
+    UserProfile createUserProfile(UserRequest userRequest);
+    UserProfile getUserProfile(String userId);
+    UserProfile editUserProfile(String userId, UserRequest userRequest);
+    void deleteUser(String userId);
 }

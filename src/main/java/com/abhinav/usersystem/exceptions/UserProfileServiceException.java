@@ -1,8 +1,8 @@
 package com.abhinav.usersystem.exceptions;
 
-public class EmailAlreadyExistsException extends RuntimeException {
+public class UserProfileServiceException extends RuntimeException {
 
-    public EmailAlreadyExistsException(String emailAlreadyExistsError) {
-        super(message)
+    public UserProfileServiceException(String message) {
+        super(message);
     }
 }
